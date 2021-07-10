@@ -287,10 +287,18 @@ export const fetchMembers = (dispatch) => () => {
     //     .then(r => { console.log("response", r); return r.json() })
     //     .then(r => {
     //         console.log("response1", r)
-            dispatch({
+           return new Promise((resolve,reject) =>{ dispatch({
                 type: ActionTypes.ADD_MEMBERS,
                 payload: r
-            });
+            })
+            resolve(true)});
         // })
         // .catch(e => console.log("error", e));
 }
+
+export const deleteSelected=(dispatch)=>((records)=>{
+    dispatch((dispatch,getState)=>{
+            const {members}=getState();
+            
+    })
+})
