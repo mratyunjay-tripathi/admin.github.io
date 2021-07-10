@@ -1,6 +1,6 @@
 import ActionTypes from './actionTypes';
 
-const r=[
+const r = [
     {
         "id": "1",
         "name": "Aaron Miles",
@@ -287,18 +287,20 @@ export const fetchMembers = (dispatch) => () => {
     //     .then(r => { console.log("response", r); return r.json() })
     //     .then(r => {
     //         console.log("response1", r)
-           return new Promise((resolve,reject) =>{ dispatch({
-                type: ActionTypes.ADD_MEMBERS,
-                payload: r
-            })
-            resolve(true)});
-        // })
-        // .catch(e => console.log("error", e));
+    return new Promise((resolve, reject) => {
+        dispatch({
+            type: ActionTypes.ADD_MEMBERS,
+            payload: r
+        })
+        resolve(true)
+    });
+    // })
+    // .catch(e => console.log("error", e));
 }
 
-export const deleteSelected=(dispatch)=>((records)=>{
-    dispatch((dispatch,getState)=>{
-            const {members}=getState();
-            
+export const deleteSelected = (dispatch) => ((records) => {
+    dispatch((dispatch, getState) => {
+        const { members } = getState();
+
     })
 })

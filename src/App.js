@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchMembers,deleteSelected } from '../src/store/actions/member';
+import { fetchMembers, deleteSelected } from '../src/store/actions/member';
 import Edit from '../src/assets/edit.png';
 import Trash from '../src/assets/trash.png';
 
@@ -57,7 +57,7 @@ class App extends Component {
     this.setState({
       maxPages, docLength, members: results, start: docLength === 0 ? 0 : 1,
       end: docLength <= 10 ? docLength : 10,
-      selectedRecords:{}
+      selectedRecords: {}
     })
   }
 
@@ -108,7 +108,7 @@ class App extends Component {
 
   selectOne = (member) => {
     const { selectedRecords, selectedIndex } = this.state;
-  
+
     const update = selectedRecords[selectedIndex] ? { ...selectedRecords[selectedIndex] } : {};
     if (!update[member.id]) {
       update[member.id] = true;
@@ -158,13 +158,13 @@ class App extends Component {
     return selectedRecords[selectedIndex] && selectedRecords[selectedIndex][member.id] ? true : false;
   }
 
-  deleteSelected=()=>{
+  deleteSelected = () => {
     this.props.deleteSelected(this.state.selectedRecords);
   }
 
   render() {
     const { members, start, end } = this.state;
-    
+
     return (
 
       <div className="flex flex-col flex-1  justify-center items-center px-10 py-10 xl:px-60 text-sm">
@@ -234,7 +234,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchMembers: fetchMembers(dispatch),
-    deleteSelected:deleteSelected(dispatch)
+    deleteSelected: deleteSelected(dispatch)
   }
 }
 

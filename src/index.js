@@ -5,36 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import { createStore, combineReducers } from "redux";
 
 import MemberReducer from '../src/store/reducers/member';
-// import thunk from "redux-thunk";
 
-
-
-// const composeEnhancers =
-//   (process.env.NODE_ENV === "development"
-//     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-//     : null) || compose;
-
-// const persistConfig = {
-//   key: "root",
-//   storage,
-// };
 
 const rootReducer = combineReducers({
   members: MemberReducer,
 });
 
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
-const store = createStore(rootReducer,{});
-
-
-// let persistor = persistStore(store);
+const store = createStore(rootReducer, {});
 
 const app = (
   <Provider store={store}>
-        <App />
+    <App />
   </Provider>
 );
 
