@@ -28,6 +28,12 @@ Special Features to be noted:
 2. By typing nothing in search box and just pressing on enter, it will show all records in current memory after all changes that have been performed.
 3. You can delete multiple records from multiple pages at once.
 4. You will see a Pop Up when you click on edit with all data of current record you can edit it and by clicking on "save" it save changes and by clicking on "cancel" it will close popup with no changes in record.
+ 
+Note: You can get back all records by reloading page.
+
 
 Tech Involved:
 React, Redux, Tailwind Css
+
+Thank-You
+Mratyunjay Tripathi
