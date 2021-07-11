@@ -31,3 +31,6 @@ Special Features to be noted:
 
 Tech Involved:
 React, Redux, Tailwind Css
+
+Thanks,
+Mratyunjay Tripathi
