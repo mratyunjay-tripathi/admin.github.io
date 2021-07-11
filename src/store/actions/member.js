@@ -279,7 +279,7 @@ const r = [
     }
 ];
 
-export const fetchMembers = (dispatch) => () => {
+export const fetchMembers = (dispatch) => (() => {
 
     // const url = "https://fe-assignment.s3.ap-south-1.amazonaws.com/members.json";
     // const url="https://api.genderize.io?name=peter";
@@ -296,11 +296,59 @@ export const fetchMembers = (dispatch) => () => {
     });
     // })
     // .catch(e => console.log("error", e));
-}
+})
 
-export const deleteSelected = (dispatch) => ((records) => {
+
+//update new changes in record
+export const updateRecord = (dispatch) => ((record) =>
     dispatch((dispatch, getState) => {
         const { members } = getState();
+        const idx = members.findIndex(m => m.id === record.id)
+        if (idx !== -1) {
+            members.splice(idx, 1, record);
+        }
+        dispatch({
+            type: ActionTypes.UPDATE,
+            payload: members
+        })
+    })
+)
 
+
+//delete all selected records
+export const deleteSelected = (dispatch) => ((records) => {
+    return dispatch((dispatch, getState) => {
+
+        const { members } = getState();
+        Object.values(records).forEach((record) => {
+            Object.keys(record).forEach((id) => {
+                const idx = members.findIndex(m => m.id === id);
+                if (idx !== -1) {
+                    members.splice(idx, 1);
+                }
+            })
+        })
+        dispatch({
+            type: ActionTypes.DELETE,
+            payload: members
+        })
     })
 })
+
+
+// delete only current record
+export const deleteCurrent = (dispatch) => ((id) =>
+    dispatch((dispatch, getState) => {
+        const { members } = getState();
+        const idx = members.findIndex(m => m.id === id)
+        if (idx !== -1) {
+            members.splice(idx, 1);
+            dispatch({
+                type: ActionTypes.DELETE,
+                payload: members
+            })
+            return true;
+        }
+        return false;
+    })
+)
