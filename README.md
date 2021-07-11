@@ -8,7 +8,7 @@ To run the application:
 6. Yehhhh! its done.
 
 To test the application:
-If you have folowed above steps than application will be running in browser just navigate to browser or you can go to hosted application here is link:https://60eacba4584ad696bacb649b--wonderful-knuth-9a31dd.netlify.app/
+If you have folowed above steps than application will be running in browser just navigate to browser or you can go to hosted application here is link:https://wonderful-knuth-9a31dd.netlify.app/
 
 Let's start 
 1. You can move next, previous, first, or to last page using special buttons.
